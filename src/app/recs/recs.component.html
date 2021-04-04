@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let rec of recService.recs, let i = index">
+    <strong>{{i + 1}}</strong>
+    {{rec.name}}
+  </li>
+</ul>
