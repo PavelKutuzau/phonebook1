@@ -17,5 +17,4 @@ export class DepsComponent implements OnInit {
   onChange(id: number): void {
     this.depService.onToggle(id);
   }
-
 }

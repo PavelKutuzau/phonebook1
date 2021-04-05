@@ -1,8 +1,35 @@
+<h3>Подразделения (настройки)</h3>
+<hr>
+<p>Для фильтрации по подразделениям в этом разделе вы можете:</p>
+<hr>
+<span id="full"><button (click)="depService.fullVisible()">&#10003;</button> - Отметить всё</span>
+<hr>
+<span id="null"><button (click)="depService.nullVisible()">&#10008;</button> - Очистить всё</span>
+<hr>
+<p>и(или) настроить фильтрацию по своему желанию:</p>
+<hr>
+
 <ul>
   <span *ngFor="let dep of depService.deps, let i = index">
-    <li>
+    <li *ngIf="dep.id==1" class="first">
       <input type=checkbox [checked]="dep.vis" (change)="onChange(dep.id)">
       {{dep.title}}
+      <ol>
+        <span *ngFor="let dep2 of depService.deps, let i = index">
+          <li *ngIf="dep2.parentId==1" class="second">
+            <input type=checkbox [checked]="dep2.vis" (change)="onChange(dep2.id)">
+            {{dep2.title}}
+            <ol>
+              <span *ngFor="let dep3 of depService.deps, let i = index">
+                <li *ngIf="dep3.parentId==dep2.id" class="third">
+                  <input type=checkbox [checked]="dep3.vis" (change)="onChange(dep3.id)">
+                  {{dep3.title}}
+                </li>
+              </span>
+            </ol>
+          </li>
+        </span>
+      </ol>
     </li>
   </span>
 </ul>

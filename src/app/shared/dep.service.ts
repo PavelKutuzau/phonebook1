@@ -21,8 +21,17 @@ export class DepService {
   constructor() {
   }
 
-  onToggle(id: number): void{
+  onToggle(id: number): void {
     const ids = this.deps.findIndex(t => t.id === id);
     this.deps[ids].vis = !this.deps[ids].vis;
   }
+
+  fullVisible(): void {
+    this.deps.forEach(d => d.vis = true);
+  }
+
+  nullVisible(): void {
+    this.deps.forEach(d => d.vis = false);
+  }
+
 }
