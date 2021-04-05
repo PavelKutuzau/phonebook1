@@ -1,6 +1,6 @@
 <span *ngFor="let dep of depService.deps, let i = index">
   <span *ngIf="dep.vis">
-      <h2>{{dep.title}}</h2>
+      <h3>{{dep.title}}</h3>
 <ul>
         <span *ngFor="let rec of recService.recs, let i = index">
 
@@ -9,11 +9,15 @@
                 <tr>
                   <td class="position">{{posService.getPositionTitle(rec.posId)}}</td>
                   <td class="name"> {{rec.name}}</td>
-                  <td class="phone">{{rec.phoneW}}</td>
-                  <td class="phone">{{rec.phoneWM}}</td>
-                  <td class="phone">{{rec.phone}}</td>
+                  <td class="phone">
+                    <ul><li class="phoneW">{{phService.getWorkPhones(rec.phoneWIDs)}}</li>
+                      <li class="phoneWM">{{phService.getWorkPhonesMobile(rec.phoneWIDs)}}</li>
+                      <li class="phoneM">{{rec.phone}}</li>
+                    </ul>
+                  </td>
                 </tr>
               </table>
+             <hr>
            </li>
 
         </span>

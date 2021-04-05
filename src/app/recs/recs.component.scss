@@ -1,7 +1,11 @@
-h2{
+h3{
   text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
+  color: darkblue;
+  line-height: 80%
+}
+hr{
+
 }
 .position{
   width: 15rem;
@@ -9,18 +13,36 @@ h2{
 .name {
   width: 40rem;
 }
-.phone{
-  width: 10rem;
+.phone {
+  width: 40rem;
+}
+.phoneW {
+  font-size: 1.2rem;
+  color: darkred;
+}
+.phoneWM {
+  font-size: 0.8rem;
+  color: darkblue;
+}
+.phoneM {
+  font-size: 0.8rem;
+  color: darkgreen;
+}
+
+table {
+  height: 2rem;
 }
 td {
- // border-style: solid;
- // border-radius: 2px;
- // border-color: darkgrey;
+  padding: 0;
+  margin: 0;
+  //border-style: solid;
+  //border-radius: 2px;
+  //border-color: darkgrey;
 }
 ul{
-  border-style: solid;
-  border-radius: 2px;
-  border-color: darkgrey;
+  //border-style: solid;
+  //border-radius: 2px;
+  //border-color: darkgrey;
 }
 li{
   list-style-type: none!important;
