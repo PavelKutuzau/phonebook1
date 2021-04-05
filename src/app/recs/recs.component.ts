@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Rec, RecService} from '../shared/rec.service';
+import {RecService} from '../shared/rec.service';
+import {DepService} from '../shared/dep.service';
 
 @Component({
   selector: 'app-recs',
@@ -8,7 +9,7 @@ import {Rec, RecService} from '../shared/rec.service';
 })
 export class RecsComponent implements OnInit {
 
-  constructor(public recService: RecService) {
+  constructor(public recService: RecService, public depService: DepService) {
   }
 
   ngOnInit(): void {

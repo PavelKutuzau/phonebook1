@@ -1,0 +1,9 @@
+<ul>
+  <span *ngFor="let dep of depService.deps, let i = index">
+    <li>
+      <input type=checkbox [checked]="dep.vis" (change)="onChange(dep.id)">
+      {{dep.title}}
+    </li>
+  </span>
+</ul>
+

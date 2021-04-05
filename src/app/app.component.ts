@@ -6,5 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = String.fromCharCode(9990) + ' Телефонный справочник предприятия';
+  logo = String.fromCharCode(9990);
+  title = 'Телефонный справочник организации';
 }
