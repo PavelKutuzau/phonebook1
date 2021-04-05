@@ -1,13 +1,13 @@
+<span *ngFor="let dep of depService.deps, let i = index">
+  <span *ngIf="dep.vis">
+      <h2>{{dep.title}}</h2>
 <ul>
-  <span *ngFor="let dep of depService.deps, let i = index">
-    <span *ngIf="dep.vis">
-      <li>{{dep.title}}</li>
-      <ol>
         <span *ngFor="let rec of recService.recs, let i = index">
+
            <li *ngIf="rec.depId == dep.id">
               <table>
                 <tr>
-                  <td>{{i + 1}}</td>
+                  <td class="position">{{posService.getPositionTitle(rec.posId)}}</td>
                   <td class="name"> {{rec.name}}</td>
                   <td class="phone">{{rec.phoneW}}</td>
                   <td class="phone">{{rec.phoneWM}}</td>
@@ -15,8 +15,9 @@
                 </tr>
               </table>
            </li>
+
         </span>
-      </ol>
+  </ul>
     </span>
   </span>
-</ul>
+

@@ -10,7 +10,7 @@ import {DepsComponent} from './deps/deps.component';
     AppComponent,
     RecsComponent,
     DepsComponent
-  ],
+ ],
   imports: [
     BrowserModule
   ],

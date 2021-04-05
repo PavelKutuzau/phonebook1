@@ -1,11 +1,27 @@
+h2{
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.position{
+  width: 15rem;
+}
 .name {
-  width: 25rem;
+  width: 40rem;
 }
 .phone{
   width: 10rem;
 }
 td {
+ // border-style: solid;
+ // border-radius: 2px;
+ // border-color: darkgrey;
+}
+ul{
   border-style: solid;
   border-radius: 2px;
   border-color: darkgrey;
+}
+li{
+  list-style-type: none!important;
 }
