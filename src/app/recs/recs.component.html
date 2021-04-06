@@ -1,3 +1,31 @@
+<table id="toptable">
+  <tr>
+    <td id="search">Поиск</td>
+    <td id="delmodeon" *ngIf="!multiDeletingMode">
+      <table>
+        <tr>
+          <td>
+            <button id="mdon" (click)="multiDeletingModeOn()">&#8634;</button>
+          </td>
+          <td>Открыть режим множественого удаления</td>
+        </tr>
+      </table>
+    </td>
+    <td id="delmodeoff" *ngIf="multiDeletingMode">
+      <table>
+        <tr>
+          <td>
+            <button id="mdoff" (click)="multiDeletingModeOff()">&#8635;</button>
+          </td>
+          <td>Вернуться</td>
+          <td id="rightbt">
+            <button id="rmall" (click)="recService.multiDelete()">&#10006;</button>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 <span *ngFor="let dep of depService.deps, let i = index">
   <span *ngIf="dep.vis">
     <h3>{{dep.title}}</h3>
@@ -15,11 +43,14 @@
                   <li class="phoneM">{{rec.phone}}</li>
                 </ul>
               </td>
-              <td class="buts">
+              <td class="buts" *ngIf="!multiDeletingMode">
                 <hr>
                 <button class="rd" (click)="redactRec(rec.id)">&#9998;</button>
                 <hr>
                 <button class="rm" (click)="recService.removeRec(rec.id)">&times;</button>
+              </td>
+              <td class="ch" *ngIf="multiDeletingMode">
+                <input type=checkbox [checked]="rec.toDelete" (change)="toDelete(rec.id)">
               </td>
             </tr>
           </table>

@@ -69,7 +69,7 @@ export class RecFormComponent implements OnInit {
   }
 
   addRecord(): void {
-    if (0 !== this.id){
+    if (0 !== this.id) {
       const rec = this.recService.getRec(this.id);
       rec.name = this.name;
       rec.depId = Math.abs(this.depId);
@@ -78,6 +78,7 @@ export class RecFormComponent implements OnInit {
       rec.phoneWIDs = this.phoneWIDs;
     } else {
       this.recService.recs.push({
+        toDelete: false,
         id: this.recService.getMaxID() + 1,
         name: this.name,
         depId: Math.abs(this.depId),

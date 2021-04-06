@@ -11,6 +11,7 @@ import {RecFormComponent} from '../rec-form/rec-form.component';
   styleUrls: ['./recs.component.scss']
 })
 export class RecsComponent implements OnInit {
+  multiDeletingMode = false;
 
   constructor(public recService: RecService, public depService: DepService,
               public posService: PosService, public phService: PhoneService) {
@@ -19,8 +20,20 @@ export class RecsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  redactRec(id: number): void{
+  redactRec(id: number): void {
     this.recService.idRedRecord = Math.abs(id);
     this.recService.triggerRedactRec();
+  }
+
+  multiDeletingModeOn(): void {
+    this.multiDeletingMode = true;
+  }
+
+  multiDeletingModeOff(): void {
+    this.multiDeletingMode = false;
+  }
+
+  toDelete(id: number): void {
+    this.recService.getRec(Math.abs(id)).toDelete = !this.recService.getRec(Math.abs(id)).toDelete;
   }
 }
