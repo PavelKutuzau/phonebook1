@@ -1,14 +1,16 @@
-h3{
+h3 {
   text-align: center;
 }
 
-#full{
+#full {
   background-color: lightgreen;
 }
-#null{
+
+#null {
 
   background-color: lightpink;
 }
+
 #phoneW {
   font-size: 1.2rem;
   background-color: darkred;
@@ -16,6 +18,7 @@ h3{
   color: white;
   margin-bottom: 2px;
 }
+
 #phoneWM {
   font-size: 0.8rem;
   background-color: darkblue;
@@ -23,43 +26,51 @@ h3{
   color: white;
   margin-bottom: 2px;
 }
+
 #phoneМ {
   font-size: 0.8rem;
   background-color: darkgreen;
   border-color: darkgreen;
   color: white;
 }
-button{
+
+button {
   $color: cornflowerblue;
   font-size: 120%;
   color: white;
   background-color: $color;
   border-color: lighten($color, 10%);
   border-radius: 6px;
+
   &:hover {
     background: darken($color, 20%);
   }
 }
-ul{
+
+ul {
   padding-left: 0;
 }
+
 li {
-  list-style-type: none!important;
+  list-style-type: none !important;
   border-style: solid;
   border-radius: 2px;
 }
-.first{
+
+.first {
   border-color: silver;
   background-color: #b8b8b8;
 }
-.second{
+
+.second {
   margin-right: 2px;
   margin-bottom: 2px;
   border-color: #f0f0f0;
   background-color: #d0d0d0;
   border-radius: 6px;
 }
-.third{
+
+.third {
   margin-right: 2px;
   margin-bottom: 2px;
   border-color: white;

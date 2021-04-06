@@ -1,33 +1,31 @@
 <span *ngFor="let dep of depService.deps, let i = index">
   <span *ngIf="dep.vis">
-      <h3>{{dep.title}}</h3>
-<ul>
-        <span *ngFor="let rec of recService.recs, let i = index">
-
-           <li *ngIf="rec.depId == dep.id">
-              <table>
-                <tr>
-                  <td class="position">{{posService.getPositionTitle(rec.posId)}}</td>
-                  <td class="name"> {{rec.name}}</td>
-                  <td class="phone">
-                    <ul><li class="phoneW">{{phService.getWorkPhones(rec.phoneWIDs)}}</li>
-                      <li class="phoneWM">{{phService.getWorkPhonesMobile(rec.phoneWIDs)}}</li>
-                      <li class="phoneM">{{rec.phone}}</li>
-                    </ul>
-                  </td>
-                  <td class="buts">
-                    <hr>
-                    <button class="rd" (click)="recService.redactRec(rec.id)">&#9998;</button>
-                    <hr>
-                    <button class="rm" (click)="recService.removeRec(rec.id)">&times;</button>
-                  </td>
-                </tr>
-              </table>
-             <hr>
-           </li>
-
-        </span>
-  </ul>
-    </span>
+    <h3>{{dep.title}}</h3>
+    <ul>
+      <span *ngFor="let rec of recService.recs, let i = index">
+        <li *ngIf="rec.depId == dep.id">
+          <table>
+            <tr>
+              <td class="position">{{posService.getPositionTitle(rec.posId)}}</td>
+              <td class="name"> {{rec.name}}</td>
+              <td class="phone">
+                <ul>
+                  <li class="phoneW">{{phService.getWorkPhones(rec.phoneWIDs)}}</li>
+                  <li class="phoneWM">{{phService.getWorkPhonesMobile(rec.phoneWIDs)}}</li>
+                  <li class="phoneM">{{rec.phone}}</li>
+                </ul>
+              </td>
+              <td class="buts">
+                <hr>
+                <button class="rd" (click)="recService.removeRec(rec.id)">&#9998;</button>
+                <hr>
+                <button class="rm" (click)="recService.removeRec(rec.id)">&times;</button>
+              </td>
+            </tr>
+          </table>
+          <hr>
+        </li>
+      </span>
+    </ul>
   </span>
-
+</span>

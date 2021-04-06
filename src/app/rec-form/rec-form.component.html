@@ -2,30 +2,58 @@
 <hr>
 <p>Для редактирования нажмите кнопку редактирования около нужной записи.</p>
 <hr>
+Предварительный просмотр
+<textarea type="text" rows="5"
+          value="ФИО: {{name + '\n'
+          }}тел.: {{phone + '\n'
+          }}Подразделение: {{getDepTitle()+ '\n'
+          }}Должность: {{getPosTitle() + '\n'
+          }}Служ.Тел.: {{getWorkPhones()
+}}"></textarea>
+<hr>
+Для добавления новой записи заполните поля ниже.
 <input
   type="text"
   placeholder="Фамилия Имя Отчество..."
-
+  [(ngModel)]="name"
 >
-<Input
+<input
   type="text"
   placeholder="Личные телефонные номера..."
+  [(ngModel)]="phone"
 >
-
-<select size="1">
+Выполните выбор:
+<select id="department" [(ngModel)]="depId" class="form-control">
   <option value="0">Выберите подразделение</option>
   <option *ngFor="let dep of depService.deps, let i = index"
           value="{{dep.id}}">{{dep.title}}</option>
 </select>
-<select size="1">
+<select id="position" [(ngModel)]="posId" class="form-control">
   <option value="0">Выберите должность</option>
   <option *ngFor="let pos of posService.poss, let i = index"
           value="{{pos.id}}">{{pos.title}}</option>
 </select>
-<select size="1">
+(при повторном выборе тут можно добавить еще один телефон)
+<select id="phones" [(ngModel)]="tempPhone" class="form-control">
   <option value="0">Выберите служебный телефон</option>
   <option *ngFor="let ph of phService.getEmptyPhones(), let i = index"
           value="{{ph.id}}">{{ph.num}}</option>
 </select>
+И нажмите соответсвующую кнопку:
+<hr>
+<table>
+  <tr>
+    <td>
+      <button id="no" (click)="cleanInfo()">Сброс</button>
+    </td>
+    <td>
+      <button id="ok" (click)="addRecord()">Ok</button>
+    </td>
+  </tr>
+</table>
+<hr>
+
+
+
 
 

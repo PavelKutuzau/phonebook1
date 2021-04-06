@@ -60,7 +60,7 @@ export class PhoneService {
   getWorkPhones(ids: number[]): string {
     let workPhones = '';
     ids.forEach(id => {
-      const idx = this.phones.findIndex(p => p.id === id);
+      const idx = this.phones.findIndex(p => p.id === Math.abs(id));
       if (workPhones === '') {
         workPhones = this.phones[idx].num;
       } else {

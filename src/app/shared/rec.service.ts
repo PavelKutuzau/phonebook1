@@ -25,7 +25,7 @@ export class RecService {
       phone: '+375(44)379-78-83(мтс), +375(29)647-34-65(a1)'
     },
     {id: 5, posId: 5, depId: 2, phoneWIDs: [11], name: 'Петрова Наталья Петровна'},
-    {id: 6, posId: 7, depId: 3, phoneWIDs: [30], name: 'Сидорова Гална Васильевна', phone: '243-28-17'},
+    {id: 6, posId: 7, depId: 3, phoneWIDs: [30], name: 'Сидорова Галина Васильевна', phone: '243-28-17'},
     {id: 7, posId: 3, depId: 4, phoneWIDs: [18], name: 'Иванова Ирина Алексеевна'},
     {id: 8, posId: 4, depId: 4, phoneWIDs: [19], name: 'Кузнецов Андрей Юрьевич', phone: '+375(44)746-76-24'},
     {id: 9, posId: 4, depId: 4, phoneWIDs: [20], name: 'Новиков Игорь Петвоич'},
@@ -48,7 +48,18 @@ export class RecService {
     this.recs = this.recs.filter(r => r.id !== id);
   }
 
-  redactRec(id: number): void {
-    this.recs = this.recs.filter(r => r.id !== id);
+  getRec(id: number): Rec {
+    const ids = this.recs.findIndex(t => t.id === id);
+    return this.recs[ids];
+  }
+
+  getMaxID(): number {
+    let MaxID = 0;
+    this.recs.forEach(r => {
+      if (r.id > MaxID) {
+        MaxID = r.id;
+      }
+    });
+    return MaxID;
   }
 }

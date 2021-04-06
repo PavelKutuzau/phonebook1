@@ -3,6 +3,7 @@ import {RecService} from '../shared/rec.service';
 import {DepService} from '../shared/dep.service';
 import {PosService} from '../shared/pos.service';
 import {PhoneService} from '../shared/phohe.service';
+import {RecFormComponent} from '../rec-form/rec-form.component';
 
 @Component({
   selector: 'app-recs',
@@ -11,10 +12,10 @@ import {PhoneService} from '../shared/phohe.service';
 })
 export class RecsComponent implements OnInit {
 
-  constructor(public recService: RecService, public depService: DepService, public posService: PosService, public phService: PhoneService) {
+  constructor(public recService: RecService, public depService: DepService,
+              public posService: PosService, public phService: PhoneService) {
   }
 
   ngOnInit(): void {
   }
-
 }

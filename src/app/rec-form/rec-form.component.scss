@@ -1,3 +1,65 @@
 h3 {
   text-align: center;
 }
+
+textarea {
+  background: lightsteelblue;
+  resize: none;
+  width: 97%;
+  height: 5rem;
+}
+
+input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: 96%;
+}
+
+select {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: 99%;
+}
+
+button {
+  margin-left: 25%;
+  border-radius: 50%;
+  border-style: solid;
+  font-size: 1rem;
+  width: 60px;
+  height: 30px;
+  transition: .3s all;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  align: center;
+}
+
+#no {
+  $color: firebrick;
+  border-color: lighten($color, 30%);
+  background: $color;
+
+  &:hover {
+    background: darken($color, 20%);
+  }
+}
+
+#ok {
+  $color: green;
+  border-color: lighten($color, 10%);
+  background: $color;
+
+  &:hover {
+    background: darken($color, 20%);
+  }
+}
