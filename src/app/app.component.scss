@@ -1,20 +1,17 @@
 .Container {
-
   width:100%;
   margin: 0 auto;
   small{
     font-size: 200%;
   }
-
   h1 {
     color: darkblue;
     margin-top: 1rem;
     line-height: 80%
-
   }
   #map {
     width:20%;
-
+    border-style: solid;
   }
   #main {
     width:60%;
@@ -23,8 +20,9 @@
     width:20%;
   }
   td {
+    vertical-align: top;
     border-style: solid;
-    border-radius: 2px;
     border-color: darkgrey;
+    border-radius: 10px;
   }
 }

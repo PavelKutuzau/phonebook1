@@ -14,17 +14,23 @@ hr{
   width: 40rem;
 }
 .phone {
-  width: 40rem;
+  width: 43rem;
+}
+.buts{
+  width: 2rem;
+  vertical-align: bottom;
 }
 .phoneW {
   font-size: 1.2rem;
   color: darkred;
 }
 .phoneWM {
+  font-weight: bold;
   font-size: 0.8rem;
   color: darkblue;
 }
 .phoneM {
+  font-weight: bold;
   font-size: 0.8rem;
   color: darkgreen;
 }
@@ -47,3 +53,49 @@ ul{
 li{
   list-style-type: none!important;
 }
+
+.rm {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+  margin-left: 0.3rem;
+  $color: firebrick;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: lighten($color, 30%);
+  background: $color;
+  color: #fff;
+  font-size: 1rem;
+  width: 25px;
+  height: 25px;
+  transition: .3s all;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: darken($color, 20%);
+  }
+}
+.rd {
+  margin-top: -0.5rem;
+  margin-bottom: -0.4rem;
+  margin-left: 0.3rem;
+  $color: green;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: lighten($color, 10%);
+  background: $color;
+  color: #fff;
+  font-size: 1rem;
+  width: 25px;
+  height: 25px;
+  transition: .3s all;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: darken($color, 20%);
+  }
+}
+
