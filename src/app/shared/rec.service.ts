@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Observable, Subject} from 'rxjs';
 
 export interface Rec {
   id: number;
@@ -11,6 +12,8 @@ export interface Rec {
 
 @Injectable({providedIn: 'root'})
 export class RecService {
+  private trigger = new Subject<void>();
+  public idRedRecord = 0;
   // records
   public recs: Rec[] = [
     {id: 1, posId: 1, depId: 1, phoneWIDs: [1], name: 'Иванов Иван Иванович'},
@@ -61,5 +64,13 @@ export class RecService {
       }
     });
     return MaxID;
+  }
+
+  get trigger$(): Observable<void> {
+    return this.trigger.asObservable();
+  }
+
+  public triggerRedactRec(): void {
+    this.trigger.next();
   }
 }

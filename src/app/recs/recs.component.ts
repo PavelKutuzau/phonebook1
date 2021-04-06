@@ -18,4 +18,9 @@ export class RecsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  redactRec(id: number): void{
+    this.recService.idRedRecord = Math.abs(id);
+    this.recService.triggerRedactRec();
+  }
 }

@@ -28,7 +28,7 @@ export class RecFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.recService.trigger$.subscribe(() => this.redactRec());
   }
 
   cleanInfo(): void {
@@ -69,24 +69,33 @@ export class RecFormComponent implements OnInit {
   }
 
   addRecord(): void {
-    this.recService.recs.push({
-      id: this.recService.getMaxID() + 1,
-      name: this.name,
-      depId: Math.abs(this.depId),
-      phone: this.phone,
-      posId: Math.abs(this.posId),
-      phoneWIDs: this.phoneWIDs
-    });
+    if (0 !== this.id){
+      const rec = this.recService.getRec(this.id);
+      rec.name = this.name;
+      rec.depId = Math.abs(this.depId);
+      rec.phone = this.phone;
+      rec.posId = Math.abs(this.posId);
+      rec.phoneWIDs = this.phoneWIDs;
+    } else {
+      this.recService.recs.push({
+        id: this.recService.getMaxID() + 1,
+        name: this.name,
+        depId: Math.abs(this.depId),
+        phone: this.phone,
+        posId: Math.abs(this.posId),
+        phoneWIDs: this.phoneWIDs
+      });
+    }
     this.cleanInfo();
   }
 
-  public redactRec(id: number): void {
-    const rec = this.recService.getRec(Math.abs(id));
+  public redactRec(): void {
+    const rec = this.recService.getRec(this.recService.idRedRecord);
     this.id = rec.id;
     this.depId = rec.depId;
     this.posId = rec.posId;
     this.name = rec.name;
-    this.phone = rec.phone;
+    this.phone = (undefined === rec.phone) ? '' : rec.phone;
     this.phoneWIDs = rec.phoneWIDs;
   }
 }
