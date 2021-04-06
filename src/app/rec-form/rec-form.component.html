@@ -1,0 +1,31 @@
+<h3>Добавить или редактировать запись</h3>
+<hr>
+<p>Для редактирования нажмите кнопку редактирования около нужной записи.</p>
+<hr>
+<input
+  type="text"
+  placeholder="Фамилия Имя Отчество..."
+
+>
+<Input
+  type="text"
+  placeholder="Личные телефонные номера..."
+>
+
+<select size="1">
+  <option value="0">Выберите подразделение</option>
+  <option *ngFor="let dep of depService.deps, let i = index"
+          value="{{dep.id}}">{{dep.title}}</option>
+</select>
+<select size="1">
+  <option value="0">Выберите должность</option>
+  <option *ngFor="let pos of posService.poss, let i = index"
+          value="{{pos.id}}">{{pos.title}}</option>
+</select>
+<select size="1">
+  <option value="0">Выберите служебный телефон</option>
+  <option *ngFor="let ph of phService.getEmptyPhones(), let i = index"
+          value="{{ph.id}}">{{ph.num}}</option>
+</select>
+
+

@@ -44,10 +44,11 @@ export class RecService {
     this.recs[6].phoneWIDs.push(21);
   }
 
-  removeRec(id: number): void{
+  removeRec(id: number): void {
     this.recs = this.recs.filter(r => r.id !== id);
   }
-  redactRec(id: number): void{
+
+  redactRec(id: number): void {
     this.recs = this.recs.filter(r => r.id !== id);
   }
 }
