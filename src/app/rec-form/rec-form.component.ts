@@ -61,10 +61,13 @@ export class RecFormComponent implements OnInit {
   }
 
   getWorkPhones(): string {
-    if (this.tempPhone > 0) {
-      this.phoneWIDs.push(Math.abs(this.tempPhone));
-      this.tempPhone = 0;
+    const phId = Math.abs(this.tempPhone);
+    if (phId > 0) {
+      if (this.phoneWIDs.indexOf(phId) === -1) {
+        this.phoneWIDs.push(phId);
+      }
     }
+    this.tempPhone = 0;
     return this.phService.getWorkPhones(this.phoneWIDs);
   }
 
@@ -87,6 +90,9 @@ export class RecFormComponent implements OnInit {
         phoneWIDs: this.phoneWIDs
       });
     }
+    this.phoneWIDs.forEach(i => {
+      this.phService.busyPhone(i);
+    });
     this.cleanInfo();
   }
 

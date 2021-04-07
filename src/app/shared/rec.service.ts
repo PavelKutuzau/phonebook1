@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
+import {PhoneService} from './phohe.service';
 
 export interface Rec {
   id: number;
@@ -69,12 +70,16 @@ export class RecService {
     }
   ];
 
-  constructor() {
+  constructor(public phoneService: PhoneService) {
     this.recs[0].phoneWIDs.push(3);
     this.recs[6].phoneWIDs.push(21);
   }
 
   removeRec(id: number): void {
+    const phoneIds = this.getRec(id).phoneWIDs;
+    phoneIds.forEach(i => {
+      this.phoneService.cleanPhone(i);
+    });
     this.recs = this.recs.filter(r => r.id !== id);
   }
 

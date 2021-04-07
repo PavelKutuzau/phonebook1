@@ -86,5 +86,18 @@ export class PhoneService {
   getEmptyPhones(): Phone[] {
     return this.phones.filter(p => !p.isBusy);
   }
+
+  getPhone(id: number): Phone {
+    const ids = this.phones.findIndex(t => t.id === id);
+    return this.phones[ids];
+  }
+
+  cleanPhone(id: number): void {
+    this.getPhone(id).isBusy = false;
+  }
+
+  busyPhone(id: number): void {
+    this.getPhone(id).isBusy = true;
+  }
 }
 
