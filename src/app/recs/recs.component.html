@@ -1,6 +1,9 @@
 <table id="toptable">
   <tr>
-    <td id="search">Поиск</td>
+    <td id="search">
+      <input type="text" placeholder="Для поиска, введите здесь часть фразы..."
+             [(ngModel)]="searchString">
+    </td>
     <td id="delmodeon" *ngIf="!multiDeletingMode">
       <table>
         <tr>
@@ -26,11 +29,12 @@
     </td>
   </tr>
 </table>
-<span *ngFor="let dep of depService.deps, let i = index">
+<hr>
+<span *ngFor="let dep of depService.deps; let i = index">
   <span *ngIf="dep.vis">
     <h3>{{dep.title}}</h3>
     <ul>
-      <span *ngFor="let rec of recService.recs, let i = index">
+      <span *ngFor="let rec of recService.recs | recFilter:searchString; let i = index">
         <li *ngIf="rec.depId == dep.id">
           <table>
             <tr>

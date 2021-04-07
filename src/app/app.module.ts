@@ -5,13 +5,15 @@ import {RecsComponent} from './recs/recs.component';
 import {DepsComponent} from './deps/deps.component';
 import {RecFormComponent} from './rec-form/rec-form.component';
 import {FormsModule} from '@angular/forms';
+import {RecsFilterPipe} from './shared/recs-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecsComponent,
     DepsComponent,
-    RecFormComponent
+    RecFormComponent,
+    RecsFilterPipe
   ],
   imports: [
     BrowserModule,

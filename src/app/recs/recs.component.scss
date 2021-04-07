@@ -1,13 +1,12 @@
 #toptable {
+  margin-top: .5rem;
   margin-left: 2.6rem;
   width: 92%;
 }
 
-#search {
-  width: 60rem;
-}
 
 #delmodeon {
+  border-radius: 5px;
   width: 40rem;
   background: lightgreen;
   vertical-align: top;
@@ -15,6 +14,7 @@
 }
 
 #delmodeoff {
+  border-radius: 5px;
   width: 20rem;
   background: lightpink;
 
@@ -120,9 +120,6 @@ table {
 td {
   padding: 0;
   margin: 0;
-  // border-style: solid;
-  // border-radius: 2px;
-  //  border-color: darkgrey;
 }
 
 li {
@@ -174,6 +171,19 @@ li {
 
   &:hover {
     background: darken($color, 20%);
+  }
+}
+
+#search {
+  width: 60rem;
+
+  input {
+    width: 80%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 .5rem;
   }
 }
 
